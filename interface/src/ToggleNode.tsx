@@ -7,14 +7,13 @@ const ToggleNode = (props: any) => {
     setActive((prev) => !prev);
     props.onNode(active);
   }
-  console.log("toggle", active);
 
   return (
     <div className="fixed top-10 left-50 right-50 bg-white p-2 rounded-xl shadow-md">
       <button
         type="button"
         className={`bg-gray-400 rounded-full p-0 w-12 h-6 focus:outline-none ${
-          active ? "bg-blue-600" : null
+          props.nodeState ? "bg-blue-600" : null
         }`}
         onClick={handleClick}
       >
