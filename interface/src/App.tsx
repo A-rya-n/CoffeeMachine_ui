@@ -7,7 +7,7 @@ import { useState } from "react";
 function App() {
   const [nodeState, setNodeState] = useState(false);
 
-  const ShowNode = (data: any) => {
+  const ShowNode = (data: boolean) => {
     setNodeState(!data);
   };
 

@@ -1,6 +1,11 @@
 import { useState } from "react";
 
-const ToggleNode = (props: any) => {
+interface ToggleNodeProps {
+  nodeState: boolean;
+  onNode: (data: boolean) => void;
+}
+
+const ToggleNode = (props: ToggleNodeProps) => {
   const [active, setActive] = useState(false);
 
   function handleClick() {
