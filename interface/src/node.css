@@ -1,5 +1,6 @@
 iframe {
   width: 90%;
   height: 80%;
+  border-radius: 15px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
