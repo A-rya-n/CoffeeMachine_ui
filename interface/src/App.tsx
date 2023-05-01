@@ -13,21 +13,17 @@ function App() {
   };
 
   useEffect(() => {
-    if (!iframeRef.current) return;
+    const iframeDocument = iframeRef.current?.contentWindow?.document;
 
-    const iframeDoc = iframeRef.current?.contentWindow?.document;
-    // const iframeBody = iframeDoc?.getElementById("#red-ui-header");
-    // if (iframeBody) {
-    //   iframeBody.style.height = "60px";
-    // }
-    iframeRef.current.onload = () => {
-      const doc = iframeDoc.querySelector("#document");
-      console.log(doc); // Should now show the contents of the iframe's document
-    };
-    // console.log("iframeBody", iframeBody);
-    console.log("iframeDoc", iframeDoc);
-    console.log("iframeRef", iframeRef.current.contentWindow);
-  }, [nodeState]);
+    if (iframeDocument) {
+      const headerLogoSpan = iframeDocument.querySelector(
+        ".red-ui-header-logo span"
+      );
+      if (headerLogoSpan) {
+        headerLogoSpan.textContent = "My Node-RED";
+      }
+    }
+  }, []);
 
   return (
     <div className="bg-blue-300 h-screen flex items-center justify-center">
