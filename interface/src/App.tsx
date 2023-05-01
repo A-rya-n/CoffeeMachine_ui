@@ -2,28 +2,28 @@ import Toggle from "./Toggle";
 import ToggleNode from "./ToggleNode";
 import Start from "./Start";
 
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 
 function App() {
   const [nodeState, setNodeState] = useState(false);
-  const iframeRef = useRef<HTMLIFrameElement>(null);
+  // const iframeRef = useRef<HTMLIFrameElement>(null);
 
   const ShowNode = (data: boolean) => {
     setNodeState(!data);
   };
 
-  useEffect(() => {
-    const iframeDocument = iframeRef.current?.contentWindow?.document;
+  // useEffect(() => {
+  //   const iframeDocument = iframeRef.current?.contentWindow?.document;
 
-    if (iframeDocument) {
-      const headerLogoSpan = iframeDocument.querySelector(
-        ".red-ui-header-logo span"
-      );
-      if (headerLogoSpan) {
-        headerLogoSpan.textContent = "My Node-RED";
-      }
-    }
-  }, []);
+  //   if (iframeDocument) {
+  //     const headerLogoSpan = iframeDocument.querySelector(
+  //       ".red-ui-header-logo span"
+  //     );
+  //     if (headerLogoSpan) {
+  //       headerLogoSpan.textContent = "My Node-RED";
+  //     }
+  //   }
+  // }, []);
 
   return (
     <div className="bg-blue-300 h-screen flex items-center justify-center">
@@ -32,12 +32,12 @@ function App() {
         <>
           <link
             rel="stylesheet"
-            href="/home/dev/Desktop/CoffeeMachine_ui/interface/src/node.css"
+            href="C:/Users/aryan/Desktop/CoffeeMachine_ui/interface/src/node.css"
+            // "/home/dev/Desktop/CoffeeMachine_ui/interface/src/node.css"
           />
           <iframe
             src="http://127.0.0.1:1880/"
-            sandbox={"allow-same-origin allow-scripts"}
-            ref={iframeRef}
+            sandbox="allow-same-origin allow-scripts"
           ></iframe>
         </>
       ) : (
