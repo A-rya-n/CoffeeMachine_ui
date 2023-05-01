@@ -4,3 +4,14 @@ iframe {
   border-radius: 15px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
+
+/* .red-ui-header-logo span {
+  margin-left: 10px;
+} */
+
+#red-ui-header span.red-ui-header-logo span:not(:first-child) {
+  margin-left: 13px;
+}
+#red-ui-header span.red-ui-header-logo img {
+  height: 43px;
+}
