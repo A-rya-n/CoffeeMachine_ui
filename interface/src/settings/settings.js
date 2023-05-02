@@ -379,11 +379,30 @@ module.exports = {
             favicon: "/home/dev/Desktop/CoffeeMachine_ui/interface/src/assets/coffeeIcon.svg",
             css: [
                 "/home/dev/Desktop/CoffeeMachine_ui/interface/src/node.css"
-                ]
+                ],
+            hidePalette: true,
+            init: function() {
+                    RED.actions.invoke("core:toggle-sidebar");
+            }
         },
         header: {
-            title: "Coffee-node",
+            title: "Coffee Machine",
             image: "/home/dev/Desktop/CoffeeMachine_ui/interface/src/assets/tea.png"
+        },
+        deployButton: {
+            type: "simple",
+            label: "Deploy",
+            icon: "/home/dev/Desktop/CoffeeMachine_ui/interface/src/assets/deploy.png",
+            //class: "my-save-button"
+        },
+        menu: { 
+            "menu-item-import-library": false,
+            "menu-item-export-library": false,
+            "menu-item-keyboard-shortcuts": false,
+            "menu-item-help": {
+                label: "Alternative Help Link Text",
+                url: "http://example.com"
+            }
         },
 
         /** To disable the 'Welcome to Node-RED' tour that is displayed the first

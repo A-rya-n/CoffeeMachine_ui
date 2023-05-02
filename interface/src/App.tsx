@@ -32,8 +32,7 @@ function App() {
         <>
           <link
             rel="stylesheet"
-            href="C:/Users/aryan/Desktop/CoffeeMachine_ui/interface/src/node.css"
-            // "/home/dev/Desktop/CoffeeMachine_ui/interface/src/node.css"
+            href="/home/dev/Desktop/CoffeeMachine_ui/interface/src/node.css"
           />
           <iframe
             src="http://127.0.0.1:1880/"
