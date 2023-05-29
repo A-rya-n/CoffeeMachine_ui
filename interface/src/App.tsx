@@ -1,39 +1,22 @@
 import Toggle from "./Toggle";
 import ToggleNode from "./ToggleNode";
 import Start from "./Start";
+import "./node.css";
 
 import { useState } from "react";
 
 function App() {
   const [nodeState, setNodeState] = useState(false);
-  // const iframeRef = useRef<HTMLIFrameElement>(null);
 
   const ShowNode = (data: boolean) => {
     setNodeState(!data);
   };
-
-  // useEffect(() => {
-  //   const iframeDocument = iframeRef.current?.contentWindow?.document;
-
-  //   if (iframeDocument) {
-  //     const headerLogoSpan = iframeDocument.querySelector(
-  //       ".red-ui-header-logo span"
-  //     );
-  //     if (headerLogoSpan) {
-  //       headerLogoSpan.textContent = "My Node-RED";
-  //     }
-  //   }
-  // }, []);
 
   return (
     <div className="bg-blue-300 h-screen flex items-center justify-center">
       <ToggleNode nodeState={nodeState} onNode={ShowNode} />
       {nodeState ? (
         <>
-          <link
-            rel="stylesheet"
-            href="/home/dev/Desktop/CoffeeMachine_ui/interface/src/node.css"
-          />
           <iframe
             src="http://127.0.0.1:1880/"
             sandbox="allow-same-origin allow-scripts"
